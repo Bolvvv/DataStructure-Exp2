@@ -14,4 +14,5 @@ private:
 	//形成运算指令，进行运算
 	void GetChar(char &ch);         //从输入流获取一字符ch,并跳过空格及回车
 	bool IsOperator(char ch);         //判断ch是否为操作符 
+	//若为 false 则表明不为操作符，若为true则表明为操作符
 };
