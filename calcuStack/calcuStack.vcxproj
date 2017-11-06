@@ -146,6 +146,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="calcuStack.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="Opnd.cpp" />
     <ClCompile Include="Optr.cpp" />
     <ClCompile Include="stdafx.cpp">
