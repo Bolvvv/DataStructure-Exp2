@@ -4,11 +4,13 @@
 #include "stdafx.h"
 #include "calcuStack.h"
 #include<string>
+#include<math.h>
 using namespace std;
 
 
 calcuStack::calcuStack()
 {
+	figureCount = 0;
 	count = 0;
 }
 
@@ -43,6 +45,49 @@ void calcuStack::inputString()
 	getline(cin, input, '#');
 }
 
+void calcuStack::judgeAndCalcu()
+{
+	char c;
+	for (int i = 0; i < count; i++)
+	{
+		c = calcuNumber[i];
+		if (isFigure(c))
+		{
+			figureArray[figureCount] = transCharToInt(c);
+			figureCount++;
+		}
+		else
+		{
+			if (figureCount != 0) 
+			{
+
+			}
+		}
+	}
+}
+
+int calcuStack::transCharToInt(char e)
+{
+	int trans;
+	trans = e - 48;
+	return trans;
+}
+
+int calcuStack::transArrayToNumber()
+{
+	int sub;
+	for (int i = 0; i <= figureCount; i++)
+	{
+		int number;
+		int n;
+		n = figureCount - i;
+		number = figureArray[i];
+		number = number*pow(10, n);
+		sub += number;
+	}
+	return sub;
+}
+
 bool calcuStack::isInputStringWrong()
 {
 	int inputLength;
@@ -62,6 +107,14 @@ bool calcuStack::isInputStringWrong()
 bool calcuStack::isCalcuNumberNull()
 {
 	if (calcuNumber.length() != 0)
+		return false;
+	else
+		return true;
+}
+
+bool calcuStack::isFigure(char &e)
+{
+	if (e == '+' || e == '-' || e == '*' || e == '/')
 		return false;
 	else
 		return true;
