@@ -7,11 +7,13 @@ protected:
 	int maxsize; //栈的最大数值
 	int count;  //栈目前的数值
 	double *elems;  //储存指针
-	void init(int size) {
-		maxsize = size;
-		if (elems != NULL) delete[]elems;
-		elems = new double[maxsize];
-		count = 0;
+public:
+	bool Empty() const //如果为空，则返回true
+	{
+		if (count == 0)
+			return true;
+		else
+			return false;
 	}
 	bool Full() const //如果已满，则返回true
 	{
@@ -20,24 +22,13 @@ protected:
 		else
 			return false;
 	}
-	bool Empty() const //如果为空，则返回true
-	{
-		if (count == 0)
-			return true;
-		else
-			return false;
-	}
-public:
-	Opnd(int size)
-	{
-		elems = NULL;
-		init(size);
-	}
 	Opnd() 
 	{
-		maxsize = 0;
-		count = 0;
 		elems = NULL;
+		maxsize = 100;
+		if (elems != NULL) delete[]elems;
+		elems = new double[maxsize];
+		count = 0;
 	}
 	void clearOpnd() //清空栈，将count置0
 	{
@@ -85,5 +76,9 @@ public:
 		}
 	}
 	//返回 0 表示栈为空，否则返回栈顶的值
+	int returnCount()
+	{
+		return count;
+	}
 };
 

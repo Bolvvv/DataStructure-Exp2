@@ -7,13 +7,7 @@ protected:
 	int maxsize; //栈的最大数值
 	int count;  //栈目前的数值
 	char *elems;  //储存指针
-	void init(int size) 
-	{
-		maxsize = size;
-		if (elems != NULL) delete[]elems;
-		elems = new char[maxsize];
-		count = 0;
-	}
+public:
 	bool Full() const //如果已满，则返回true
 	{
 		if (count == maxsize)
@@ -28,16 +22,13 @@ protected:
 		else
 			return false;
 	}
-public:
-	Optr(int size) {
-		elems = NULL;
-		init(size);
-	}
 	Optr()
 	{
-		maxsize = 0;
-		count = 0;
 		elems = NULL;
+		maxsize = 100;
+		if (elems != NULL) delete[]elems;
+		elems = new char[maxsize];
+		count = 0;
 	}
 	void clearOpnd() //清空栈，将count置0
 	{

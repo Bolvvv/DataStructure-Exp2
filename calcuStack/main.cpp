@@ -4,6 +4,7 @@
 using namespace std;
 int main()
 {
+	double outSub; 
 	calcuStack cal;  //定义类
 	cal.inputString(); //输入内容
 
@@ -18,8 +19,10 @@ int main()
 		cout << "未输入内容" << endl;
 		return 0;
 	}  //判断是否输入
-
-
-
+	cal.judgeAndCalcu();
+	cal.finishNumberStack();
+	outSub = cal.popResult();
+	cout << outSub << endl;
+	system("PAUSE");
 	return 0;
 }
