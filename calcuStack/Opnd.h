@@ -61,8 +61,8 @@ public:
 			return e;
 		}
 	}
-	//返回 0 表示栈为空，否则返回栈顶值
-	double top()//展示栈顶的值
+	//返回 0 表示栈为空，否则返回e
+	double top(double &e)//展示栈顶的值
 	{
 		if (Empty())
 		{
@@ -70,12 +70,11 @@ public:
 		}
 		else
 		{
-			double e;
 			e = elems[count - 1];
-			return e;
+			return 1;
 		}
 	}
-	//返回 0 表示栈为空，否则返回栈顶的值
+	//返回 0 表示栈为空，返回1表示成功
 	int returnCount()
 	{
 		return count;

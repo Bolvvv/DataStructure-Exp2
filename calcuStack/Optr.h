@@ -49,20 +49,19 @@ public:
 			return 1;
 		}
 	}
-	char pop() //出栈
-				  //返回 0 表示栈为空，否则返回栈顶值
+	char pop(char &e) //出栈
+				  //返回 0 表示栈为空，返回1则表示成功
 	{
 		if (Empty())
 			return 0;
 		else
 		{
-			char e;
 			e = elems[count - 1];
 			count--;
-			return e;
+			return 1;
 		}
 	}
-	char top() //展示栈顶的值
+	char top(char &top) //展示栈顶的值
 				  //返回 0 表示栈为空，否则返回栈顶的值
 	{
 		if (Empty())
@@ -73,7 +72,7 @@ public:
 		{
 			char e;
 			e = elems[count - 1];
-			return e;
+			top = e;
 		}
 	}
 };

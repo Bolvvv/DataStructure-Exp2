@@ -4,5 +4,8 @@
 using namespace std;
 int main()
 {
+	calcuStack calcu;
+	calcu.Run();
+	system("PAUSE");
 	return 0;
 }
