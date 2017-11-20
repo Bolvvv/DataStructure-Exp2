@@ -159,7 +159,7 @@ void calcuStack::Run()
 	char optrTop;
 	double operand;
 	char theta;
-
+	cout << "请输入表达式" << endl;
 	cin >> ch;
 	while ((optr.top(optrTop), optrTop != '=') || ch != '=')
 	{
